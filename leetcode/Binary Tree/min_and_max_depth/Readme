@@ -1,0 +1,1 @@
+min_depth 和 max_depth我们应该这么看， max处理起来比min 简单， 因为在处理max的时候， 会自动忽略当left 和right 不同时等于null 的 等于null的那一边， 所以就省去了 中间的三个判断
