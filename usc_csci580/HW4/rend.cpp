@@ -74,14 +74,20 @@ void matrixMul(GzMatrix a, GzMatrix b, GzMatrix* result, int row, int column, in
 //set all elements in a matrix to 0
 void initMatrix(GzMatrix* matrix, int num);//HW3
 
+
 //--------------------------------------------for vector-----------------
 //get the dot product from two vector
+void initVec(GzCoord* vec);//hw4 init a vector with x = y = z = 0
 float dotProFun(GzCoord a, GzCoord b); //HW3
 void normalize(GzCoord* vec);
 void numMulVector(GzCoord* vec, float num);//HW4
 void vecMinus(GzCoord* first, GzCoord* second, GzCoord* result);//HW4
 void vecAdd(GzCoord* first, GzCoord* second, GzCoord* result);//HW4
 void vecMulvec(GzCoord first, GzCoord second, GzCoord* result);//HW4
+void numMulVector(GzCoord* vec, float num, GzCoord* result);//HW4    num*Vector = vector
+void vecMinus(GzCoord* first, GzCoord* second, GzCoord* result);//HW4  vector3 = vector2 - vector1;
+
+
 
 //----------------------------------------HW3 FUNCTION HEADERS-----------------------------------------------------
 
@@ -122,11 +128,12 @@ void VectorMultiply(GzMatrix topMatrix, GzCoord* verts, GzCoord* cVerts);
 void DoLEEWithGouraud(GzRender* , GzCoord* tri, GzCoord* imageSpaceTri,GzCoord* imageSpaceNormal);  //implement later
 void DoLEEWithPhong(GzRender* , GzCoord* tri, GzCoord* imageSpaceTri,GzCoord* imageSpaceNormal);   //implement later
 void initOtherAttribute(GzRender* render);
-//void getXnorms(GzRender* render);
 void computeShading(GzRender* render, GzCoord& normal, GzColor& color);
-
-
-
+void edgeCopy(edge a, edge& b);
+void getColorTri(edge* colorTri, GzCoord* tri, GzColor* color, int num);
+void getNormalTri(edge* normalTri, GzCoord* tri, GzCoord* imageSpaceNormal, int num);
+float getColor(plane p, int x, int y);
+float getNormal(plane p, int x, int y);
 
 
 
@@ -1290,7 +1297,7 @@ bool triangleOutsideImagePlane( GzRender * render, GzCoord * verts )
 		return false;
 }
 
-//-----------------------------------------------HW4  FUNCTIONS
+//-----------------------------------------------HW4  FUNCTIONS-------------------------------------
 void edgeCopy(edge a, edge& b){
 	b.a = a.a;
 	b.b = a.b;
