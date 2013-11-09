@@ -1,0 +1,379 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/3.13.0/build/cssbutton/cssbutton.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssgrids/cssgrids-min.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.13.0/build/cssgrids-responsive/cssgrids-responsive-min.css">
+		<link rel="stylesheet" href="myCSS.css" type="text/css">
+		<script src="http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js"></script>
+		<script>
+		var type;
+		var temp = "F";
+		var xhr = false;
+		var where = 0;
+		var jsonData = 0;
+		var unit = "C";
+		var setLogin = 0;
+/* -----------------------------------   functional functions----------------------------------*/
+		function clearAll(){
+			YUI().use('node', function(Y){
+				var clear = Y.one('#forecastTable');
+				clear.setHTML("");
+				var clear = Y.one('#text');
+				clear.setHTML("");
+				var clear = Y.one('#lowAndHigh');
+				clear.setHTML("");
+				var clear = Y.one('#temperature');
+				clear.setHTML("");
+				var clear = Y.one('#city');
+				clear.setHTML("");
+				var clear = Y.one('#facebook');
+				clear.setHTML("");
+				clear = Y.one('#invalid');
+				clear.setHTML("");
+				clear = Y.one('#regionAndCountry');
+				clear.setHTML("");
+			});
+		}
+		
+		function renderDynamic(){
+			YUI().use('node',"datatable", "datasource-get", "datasource-jsonschema", "datatable-datasource", function(Y){
+				var table = new Y.DataTable({
+					data: jsonData.weather.forecast,
+					columns:[
+						{
+							key: "day", 
+							label: "Day"
+						},
+						{
+							key: "text", label: "Weather"
+						},
+						{
+							key: "high", 
+							label: "High",
+							formatter:converter,
+							allowHTML:true
+						},
+						{
+							key: "low", 
+							label: "Low",
+							formatter:converter,
+							allowHTML:true
+						}
+					],
+					caption:"Forecast"
+				});
+				var tableDiv = Y.one('#forecastTable');
+				table.render(tableDiv);
+				
+				
+				var img = Y.one('#text');
+				img.setHTML("<img src=" + jsonData.weather.img + "></img>" + jsonData.weather.condition.text);
+				
+				var low = convertSingle(jsonData.weather.forecast[0].low);
+				var high = convertSingle(jsonData.weather.forecast[0].high);
+				var nowTemp = convertSingle(jsonData.weather.condition.temp);
+				var lowAndHigh = Y.one('#lowAndHigh');
+				lowAndHigh.setHTML("&#8593;" + high + "<sup>o</sup>"+ unit +"&nbsp;&nbsp;&nbsp;&nbsp;&#8595;" + low + "<sup>o</sup>" + unit);
+				var temperature = Y.one('#temperature');
+				temperature.setHTML(""+nowTemp + "<sup><sup>o</sup><a onclick = unitConvert()>"+unit+"</a></sup>");
+			
+				//for city + region + country
+				var city = Y.one('#city');
+				city.setHTML("<p><a class = hyperLink href="+ decodeURIComponent(jsonData.weather.feed) + " target=_blank>" + jsonData.weather.location.city + "</a></p>");
+				var regionAndCountry = Y.one('#regionAndCountry');
+				var region = jsonData.weather.location.region == "N/A" ? " " : jsonData.weather.location.region + ',';
+				var country = jsonData.weather.location.country == "N/A" ? " " : jsonData.weather.location.country;
+				regionAndCountry.setHTML(region + country);
+				//facebook part
+				var facebook = Y.one('#facebook');
+				facebook.setHTML("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='radio' name='postInfo' value='current' id='radio_current'>Post Current Weather</input><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='radio' name='postInfo' value='forecast' id = 'radio_forecast'>Post Weather Forecast</input><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class=facebookButton type=image id=postFB onclick=postFB() src='facebook.jpg' width=160px height=50px></input>");
+				//yahoo image:
+				
+				var yahooLink = Y.one('#yahooLogo');
+				yahooLink.setAttribute("href", jsonData.weather.link);
+
+			});
+		}
+		
+		function converter(cell){
+			if(cell.value == 'N/A'){
+				return " ";
+			}
+			var celsius = parseInt((cell.value - 32) * (5 / 9)) + "<sup>o</sup>" + unit;
+			return unit == "F" ? (cell.value + "<sup>o</sup>" + unit) : celsius;
+		}
+		
+		function convertSingle(value){
+			var celsius = parseInt((value - 32) * (5 / 9));
+			return unit == "F" ? value : celsius;
+		}
+	
+		function unitConvert(){
+			//alert("hi");
+			if(unit == "F"){
+				unit = "C";
+			}else{
+				unit = "F";
+			}
+			clearAll();
+			renderDynamic();
+		}
+		
+    	  function postInfo() {
+  			var city = jsonData.weather.location.city;
+			var region = jsonData.weather.location.region == "N/A" ? " " : jsonData.weather.location.region + ',';
+  			var area = city + ", "+ region + jsonData.weather.location.country;
+  			var weather = jsonData.weather.condition.text;
+  			var temperature = jsonData.weather.condition.temp;
+  			var img = jsonData.weather.img;
+  			var feed = decodeURIComponent(jsonData.weather.feed);
+  			var link = jsonData.weather.link;
+  			//alert(link);
+			
+    			if(document.getElementById('radio_current').checked){
+  				var obj = {
+  					method: 'feed',
+  					name:area,
+  				    link: feed,
+  					picture: img,
+  				    caption: 'The current condition for ' + city + ' is ' + weather,
+  				    description: 'Temperature is ' + temperature + '<sup>o</sup>F',
+  					properties: {"Look at details":{"text": "here", "href":link}},
+  				};
+    			}else if(document.getElementById('radio_forecast').checked){
+  					var forecast = jsonData.weather.forecast;
+  					var foreString = "";
+  					var foreImg = "http://cs-server.usc.edu:22688/examples/servlets/forecast.jpg";
+  					for(var i = 0; i < forecast.length;i++){
+  						foreString += (forecast[i].day + ": " + forecast[i].text + ", " + forecast[i].high + "<sup>o</sup>F/" + forecast[i].low + "<sup>o</sup>F");
+  						if(i == forecast.length - 1){
+  							foreString += '.';
+  						}else{
+  							foreString += '; ';
+  						}
+  					}
+  					var obj = {
+  						method: 'feed',
+  						name:area,
+  				    	link: feed,
+  						picture: foreImg,
+  				    	caption: 'Weather Forecast ' + city,
+  				    	description: foreString,
+  						properties: {"Look at details":{"text": "here", "href":link}},
+  					};
+    				}else{
+    					alert("You need to select one from the above two radio box");
+  					return;
+    				}
+  			FB.ui(obj, function(){});
+    		}
+/* ------------------------------------------   end of functional functions---------------------------------------------*/
+		
+		
+		function loadFB(){
+	  	  (function(d){
+	  	   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	  	   if (d.getElementById(id)) {return;}
+	  	   js = d.createElement('script'); js.id = id; js.async = true;
+	  	   js.src = "//connect.facebook.net/en_US/all.js";
+	  	   ref.parentNode.insertBefore(js, ref);
+	  	  }(document));
+	  
+		  window.fbAsyncInit = function() {
+			  //alert("start");
+		 	 FB.init({
+		   	  	appId      : '176902512506446', // App ID
+		    	status     : true, // check login status
+		    	cookie     : true, // enable cookies to allow the server to access the session
+		    	xfbml      : true  // parse XFBML
+		  	 });
+			}
+		  }
+
+		
+		function postFB(){
+			if(!document.getElementById('radio_current').checked && !document.getElementById('radio_forecast').checked){
+				alert("You need to select one from the above two radio box");
+				return;
+			}
+		
+		  	  FB.getLoginStatus(function(response) {
+		  	  	if (response.status === 'connected') {
+		    	  		postInfo();
+						setLogin = 1;
+		  	  	} else if (response.status === 'not_authorized') {
+		    		FB.login();
+		  		} else {
+		   	 	    FB.login();
+		 		}
+			  },true);
+			  
+			FB.Event.subscribe('auth.login', function(response) {
+		  	  	if (response.status === 'connected') {
+		    	  		if(setLogin == 0){postInfo();setLogin = 1}
+		  	  	} else if (response.status === 'not_authorized') {
+		    		FB.login();
+		  		} else {
+		   	 	    FB.login();
+		 		}
+			  },true);
+		}
+		
+		function myCallBack(){
+			if(xhr.readyState == 4){
+				//document.write("get here in 4\n");
+				if(xhr.status == 200){
+					//alert("200callback");
+					//alert(xhr.responseText);
+					if(xhr.responseText == "NoResults"){
+						YUI().use('node', function(Y){
+							var invalid = Y.one('#invalid');
+							clearAll();
+							invalid.setHTML("Weather infomation can't be found!");
+						});
+						return;
+					}
+					try{
+						window.jsonData = JSON.parse(xhr.responseText);
+					}catch(e){
+						alert("Invalid data");
+					}
+					clearAll();
+					renderDynamic();
+				}else{
+					document.write(xhr.status);
+				}//end of status =  4
+			}//end of readyState = 200
+		}
+		
+		function request(){
+			var url;
+			var temp = "http://cs-server.usc.edu:22688/examples/servlet/weatherSearch?";
+			url = "location=" + where + "&type=" + type + "&tempUnit=F";
+			url = temp + url;
+			url = url.replace(/ /g, '+');
+			url = url.replace(/,/g, '%2C');
+			unit = "F";
+			//alert(url);
+			if(window.XMLHttpRequest){
+				xhr = new XMLHttpRequest();
+			}else{
+				if(window.ActiveObject){
+					try{
+						xhr = newActiveObject("Microsoft.XMLHTTP");
+					}
+					catch(e){}
+				}
+			}
+			if(xhr){
+				xhr.open("GET",url,true);
+				xhr.onreadystatechange = myCallBack;
+				xhr.setRequestHeader("Connection","Close");
+				xhr.setRequestHeader("Method", "GET" + url + "HTTP/1.1");
+				xhr.send(null);
+			}
+			else{
+				document.getElementById("weather").innerHTML = "Sorry, but I couldn't create an xmlHttpRequest\n";
+			}
+		}
+		
+		function validation(){
+			var value = document.myForm.location.value;
+			if(value == ""){
+				alert("Input is empty\ Please enter a location");
+				return 0;
+			}
+			var re = /^[0-9]*$/;
+			if(re.test(value))// contains only digits
+			{
+				re = /^[0-9]{5}$/;
+				if(!re.test(value)){
+					alert("Invalid Zip Code\nThe Zip Code is exactly 5 digits");
+					return 0;
+				}
+				type = "Zip_Code";
+				where = value;
+			}
+			else{
+				type = "city";
+				re = /^[a-zA-Z0-9,\-\s]+$/;
+				if(!re.test(value)){
+					alert("Invalid city name\n please enter again\nFor example: Los Angeles, CA");
+					return 0;
+				}
+				re = /^[a-zA-Z0-9\-\s]+,[a-zA-Z0-9\-\s]+$/
+				var re1 = /^[a-zA-Z0-9\-\s]+,[a-zA-Z0-9\-\s]+,[a-zA-Z0-9\-\s]+$/
+				if(!re.test(value) && !re1.test(value)){
+					alert("Invalid city name\n please enter again\nFor example: Los Angeles, CA");
+					return 0;
+				}
+				where = value;
+			}
+			return 1; 
+		}
+		/*
+		YUI().use('node','event','stylesheet', function(Y){
+			var button = Y.one('#upload');
+			button.on('click', function(cf){
+				alert("1234");
+				if(validation()) request();
+			});
+		});
+		*/
+		/*
+		YUI().use('node','event','stylesheet', function(Y){
+			var button = Y.one('#postFB');
+			button.on('click',function(cf){
+				alert("success");
+			});
+		});
+		*/
+		window.onload = loadFB();
+		// onclick = 'validation()&&request()' 
+		</script>
+	</head>
+	<body class="yui3-skin-sam">
+	<div id = 'whole' class = 'wholeDiv'>
+		<div id = 'form' class = 'form'>
+			<form name = 'myForm'>
+				Location: 
+					<input class = 'yui3-u-1-2' type = 'text' name = 'location' value = 'Enter city or Zip Code'/>
+					<input id = 'upload' name = 'subm' type = 'button' class='yui3-button' onclick = 'validation()&&request()' value = 'Search'></input>
+			</form>
+		</div>
+		<div id = 'invalid' class = 'invalidDiv'></div>
+		<div id = 'geoInfo' class = 'geo'>
+			<div class = 'yui3-g-r'>
+				<div class = 'yui3-u-1-2'>
+					<div id = 'city' class = 'cityDiv'></div>
+					<div id = 'regionAndCountry' class = 'regionDiv'></div>
+				</div>
+				<div class = 'yui3-u-1-2'></div>
+			</div>
+		</div>
+		<div class = 'weatherDiv'>
+			<div class = 'yui3-g-r'>
+				<div class = 'yui3-u-3-8'>
+					<div id = 'weatherInfo'  class = 'weatherInfoDiv'>
+						<div id = 'temperatureInfo'>
+							<div id = 'text' class = 'textDiv'></div>
+							<div id = 'lowAndHigh' class = 'lowAndHighDiv'></div>
+							<div id = 'temperature' class = 'temperatureDiv'></div>
+						</div>
+					</div>
+				</div>
+				<div class = 'yui3-u-3-8'>
+					<div id = 'forecastTable' class = 'forecastTableDiv'></div>
+				</div>
+				<div class = 'yui3-u-1-4'>
+						<div id = 'facebook' class = 'facebookDiv'></div>
+				</div>
+			</div>
+		</div>
+		<div id = 'yahooItem' class = 'yahooItemDiv'>
+			View Full Weather here<br><a id='yahooLogo' href = 'http://weather.yahoo.com' target=_blank><img src = 'yahoo.gif'></img></a>
+		</div class = 'yui3-g-r'>
+	</div>
+	</body>
+</html>

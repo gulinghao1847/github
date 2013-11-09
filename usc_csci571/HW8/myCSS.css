@@ -1,0 +1,115 @@
+div.wholeDiv{
+	margin-left:30px;
+}
+div.weatherDiv{
+	height:40%;
+}
+div.geo{
+	text-align:center;
+	height:40%;
+}
+div.form{
+	height:10%;
+	text-align: center;
+	font-size:20px;
+	color:white;
+	padding-top:20px;
+}
+
+div.form input{
+	height:50%;
+	vertical-align:middle; 
+}
+
+div.weatherInfoDiv{
+	height:100%;
+}
+div.forecastTableDiv{
+	height:100%;
+	text-align:center;
+	position:relative;
+}
+
+div.facebookDiv{
+}
+
+div.cityDiv{
+	height:50%;
+	text-align:center;
+	position:relative;
+	font-family: Verdana, Arial, Sans-serif;
+	font-size: 50px;
+	color:white;
+	text-align:middle;
+}
+div.regionDiv{
+	height:50%;
+	position:relative;
+	font-family: Verdana, Arial, Sans-serif;
+	font-size: 30px;
+	color:white;
+	vertical-align:top;
+}
+div.textDiv{
+	text-align:center;
+	color:white;
+	height: 25%;
+	vertical-align:middle; 
+	font-size:30px;
+}
+
+div.lowAndHighDiv{
+	text-align:center;
+	color:white;
+	font-size:20px;
+	height:15%;
+}
+
+div.temperatureDiv{
+	text-align:center;
+	color:white;
+	height:50%;
+	font-size:100px;
+}
+
+div.yahooItemDiv{
+	position:relative;
+	text-align:right;
+	width:100%;
+}
+
+div.invalidDiv{
+	color:white;
+	font-size:50px;
+	text-align:center;
+}
+
+a.hyperLink{
+	text-decoration: none;
+	color:white;
+}
+
+input.facebookButton{
+	text-decoration: underline;
+}
+
+body{
+	height:100%;
+	width:100%;
+	background:url('sky.jpg') no-repeat;
+	background-size:100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+table{
+	margin:0,auto;
+}
+
+div
+#CSSform{
+	background:red;
+}
+
+
