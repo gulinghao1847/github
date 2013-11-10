@@ -1550,22 +1550,31 @@ void computeShading(GzRender* render, GzCoord& normal, GzColor& color, GzTexture
 		putVertValue(render -> Kd, &KD);
 		putVertValue(render -> Ks, &KS);
 	}
-
-	if(render -> interp_mode == GZ_NORMAL){
-		//first calculate Ks and Kd
-		//Calculate Ka
-		vecMulvec(render -> ambientlight.color, KA, &KaPart);
-		//Calculate Ks, Kd
-		vecMulvec(KsPart, KS, &KsPart);
-		vecMulvec(KdPart, KD, &KdPart);
-		//get the final result
-		vecAdd(&KsPart, &KdPart, &color);
-		//TRACE("red: %f, green: %f, blue :%f\n",color[RED], color[GREEN], color[BLUE]);
-		vecAdd(&KaPart, &color, &color);
-	}else if(render -> interp_mode == GZ_COLOR){
-		vecAdd(&render -> ambientlight.color, &KsPart, &KsPart);
-		vecAdd(&KsPart, &KdPart, &color);
-		vecAdd(&KaPart, &color, &color);
+	if(render -> tex_fun){
+		if(render -> interp_mode == GZ_NORMAL){
+			//first calculate Ks and Kd
+			//Calculate Ka
+			vecMulvec(render -> ambientlight.color, KA, &KaPart);
+			//Calculate Ks, Kd
+			vecMulvec(KsPart, KS, &KsPart);
+			vecMulvec(KdPart, KD, &KdPart);
+			//get the final result
+			vecAdd(&KsPart, &KdPart, &color);
+			//TRACE("red: %f, green: %f, blue :%f\n",color[RED], color[GREEN], color[BLUE]);
+			vecAdd(&KaPart, &color, &color);
+		}else if(render -> interp_mode == GZ_COLOR){
+			vecAdd(&render -> ambientlight.color, &KsPart, &KsPart);
+			vecAdd(&KsPart, &KdPart, &color);
+			vecAdd(&KaPart, &color, &color);
+		}
+	}else{
+			vecMulvec(render -> ambientlight.color, KA, &KaPart);
+			vecMulvec(KsPart, KS, &KsPart);
+			vecMulvec(KdPart, KD, &KdPart);
+			//get the final result
+			vecAdd(&KsPart, &KdPart, &color);
+			//TRACE("red: %f, green: %f, blue :%f\n",color[RED], color[GREEN], color[BLUE]);
+			vecAdd(&KaPart, &color, &color);
 	}
 }
 void copyVert(GzCoord v, vert& newV, int idx){

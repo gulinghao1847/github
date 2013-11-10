@@ -5,6 +5,11 @@
 #include  "math.h"
 #define	IMG_ARRAY(x,y,xs)	(x+(y*xs))
 #define NUM 200
+#define COLORFUL 0
+extern void numMulVector(GzCoord* vec, float num, GzCoord*);
+extern void vecAdd(GzCoord* first, GzCoord* second, GzCoord* result);
+extern void putVertValue(GzCoord coord, GzCoord* newCoord);
+
 
 GzColor	*image=NULL;
 int xs, ys;
@@ -93,16 +98,76 @@ public:
 class CLUT
 {
 private:
-	float color[256][3];
+		int colorNum;
+		GzColor color[7];
 public:
 	void init();
 	void getColor(float lengthX, int scale, GzColor color);
 };
 
 void CLUT::init(){
+	float fact = (float)1 / (float)255;
+	//TRACE("FACT: %f", fact);
+	//000
+	color[0][0] = 0 * fact;
+	color[0][1] = 0 * fact;
+	color[0][2] = 0 * fact;
+	//001
+	color[1][0] = (float)0 * fact;
+	color[1][1] = (float)0 * fact;
+	color[1][2] = (float)255 * fact;
+	//010
+	color[2][0] = (float)0 * fact;
+	color[2][1] = (float)255 * fact;
+	color[2][2] = (float)0 * fact;
+	//100
+	color[3][0] = (float)0 * fact;
+	color[3][1] = (float)255 * fact;
+	color[3][2] = (float)255 * fact;
+	//101
+	color[4][0] = (float)255 * fact;
+	color[4][1] = (float)0 * fact;
+	color[4][2] = (float)0 * fact;
+	//110:
+	color[5][0] = (float)255 * fact;
+	color[5][1] = (float)255 * fact;
+	color[5][2] = (float)0 * fact;
+	//111:
+	color[6][0] = (float)255 * fact;
+	color[6][1] = (float)255 * fact;
+	color[6][2] = (float)255 * fact;
+	
+	colorNum = 7;
 }
 
-void CLUT::getColor(float lengthX, int scale, GzColor color){
+void CLUT::getColor(float lengthX, int scale, GzColor result){
+	float input = lengthX * ((colorNum - 1) / scale);
+	int Si = input;
+	//TRACE("lengthX: %f\n", lengthX);
+	//TRACE("input: %f\n", input);
+	//TRACE("Si: %d\n", Si);
+	int Si_1 = (Si == colorNum - 1) ? Si : Si + 1;
+	if(Si != Si_1){
+		float a = ((float)Si_1 - input) / ((float)Si_1 - (float)Si);
+		float b = (input - (float)Si) / ((float)Si_1 - (float)Si);
+		//C = aCi + bCi+1
+		GzColor Ci;
+		GzColor Ci_1;
+		//putVertValue(color[Si], &Ci);
+		//putVertValue(color[Si_1], &Ci_1);
+		numMulVector(&color[Si], a, &Ci);
+		numMulVector(&color[Si_1], b, &Ci_1);
+		result[0] = (Ci[0] + Ci_1[0]) / 2;
+		result[1] = (Ci[1] + Ci_1[1]) / 2;
+		result[2] = (Ci[2] + Ci_1[2]) / 2;
+		//TRACE("R: %f, G: %f, B: %f\n", color[Si][0], color[Si][1], color[Si][2]);
+		//TRACE("R: %f, G: %f, B: %f\n", result[0], result[1], result[2]);
+	}
+	else{
+		result[0] = color[colorNum - 1][0];
+		result[1] = color[colorNum - 1][1];
+		result[2] = color[colorNum - 1][2];
+	}
 }
 
 /* Procedural texture function */
@@ -110,33 +175,45 @@ int ptex_fun(float u, float v, GzColor color)
 {
         int N = NUM;
 		CLUT lookUp;
+		lookUp.init();
         complexNumber x;
         complexNumber c;
         //C
-        c.r = -0.74543;
-        c.i = 0.11301;
-        //X = u + vi
-        x.r = u;
-		x.i = v;
+        c.r = -0.642133;
+        c.i = 0.4232323;
+
+        x.r = 2*u - 0.9;
+		x.i = v - 0.7;
         int i;
         float clr;
-    for(i = 0; i < N; i++)
-        {
-                //X ^ 2 + C
-                //(XrYr - XiYi)r + Cr
-        float xr = x.r * x.r - x.i * x.i + c.r;
-                //(XrYi + XiYr)i + Ci
-        float xi = x.r * x.i + x.i * x.r + c.i;
-                if ((x.r * x.r + x.i * x.i) > 4.0)
-                {
-                        break;
-                }
-        x.r = xr;
-        x.i = xi;
-    }
-    float lengthX = sqrt(x.r * x.r + x.i * x.i);
-	lookUp.getColor(lengthX, 2, color);
-    return GZ_SUCCESS;
+		for(i = 0; i < N; i++)
+		{
+			float xr = x.r * x.r - x.i * x.i + c.r;
+			float xi = x.r * x.i + x.i * x.r + c.i;
+			if ((xr * xr + xi * xi) > 4.0)
+			{
+				break;
+			}
+			x.r = xr;
+			x.i = xi;
+		}
+	
+		float lengthX = sqrt(x.r * x.r + x.i * x.i);
+		if (i == N)
+		{
+#if 0
+			color[0] = color[1] = color[2] = lengthX / 4;
+#else
+			lookUp.getColor(lengthX, 1, color);
+#endif
+		}
+		else
+		{	
+			color[2] = (float)i / (float)N  * 15;
+			color[0] = (float)i / (float)N  * 14;
+			color[1] = (float)i / (float)N  * 7;
+		}
+		 return GZ_SUCCESS;
 }
 
 /* Free texture memory */
