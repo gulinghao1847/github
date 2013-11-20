@@ -1,8 +1,8 @@
 //
 //  main.m
-//  usccsci571hw9
+//  571hw9
 //
-//  Created by linghao_gu on 13-11-19.
+//  Created by linghao_gu on 13-11-18.
 //  Copyright (c) 2013年 linghao. All rights reserved.
 //
 
