@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE68695E183DA1E100266FB5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE68695D183DA1E100266FB5 /* Accounts.framework */; };
+		CE686960183DA1F000266FB5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE68695F183DA1F000266FB5 /* AdSupport.framework */; };
+		CE686962183DA1FB00266FB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE686961183DA1FB00266FB5 /* Social.framework */; };
+		CE686964183DA23400266FB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE686963183DA23400266FB5 /* Security.framework */; };
+		CE686966183DA75E00266FB5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE686965183DA75E00266FB5 /* libsqlite3.dylib */; };
+		CE68696F183DEDD600266FB5 /* forecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE68696E183DEDD600266FB5 /* forecastCell.m */; };
+		CE686971183F089700266FB5 /* forecast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE686970183F089700266FB5 /* forecast.jpg */; };
 		CE9FD436183C94C50085423D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FD435183C94C50085423D /* UIKit.framework */; };
 		CE9FD438183C94C50085423D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FD437183C94C50085423D /* Foundation.framework */; };
 		CE9FD43A183C94C50085423D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FD439183C94C50085423D /* CoreGraphics.framework */; };
@@ -18,9 +25,18 @@
 		CE9FD44C183C94C50085423D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FD44B183C94C50085423D /* Default-568h@2x.png */; };
 		CE9FD44F183C94C50085423D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9FD44D183C94C50085423D /* MainStoryboard.storyboard */; };
 		CE9FD452183C94C50085423D /* GLHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FD451183C94C50085423D /* GLHViewController.m */; };
+		CEB35E37183CA8750049CF71 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB35E36183CA8750049CF71 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE68695D183DA1E100266FB5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CE68695F183DA1F000266FB5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CE686961183DA1FB00266FB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CE686963183DA23400266FB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE686965183DA75E00266FB5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CE68696D183DEDD600266FB5 /* forecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forecastCell.h; sourceTree = "<group>"; };
+		CE68696E183DEDD600266FB5 /* forecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forecastCell.m; sourceTree = "<group>"; };
+		CE686970183F089700266FB5 /* forecast.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = forecast.jpg; sourceTree = "<group>"; };
 		CE9FD432183C94C50085423D /* usccsci571hw9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usccsci571hw9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9FD435183C94C50085423D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9FD437183C94C50085423D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +53,7 @@
 		CE9FD44E183C94C50085423D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CE9FD450183C94C50085423D /* GLHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLHViewController.h; sourceTree = "<group>"; };
 		CE9FD451183C94C50085423D /* GLHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLHViewController.m; sourceTree = "<group>"; };
+		CEB35E36183CA8750049CF71 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +61,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE686966183DA75E00266FB5 /* libsqlite3.dylib in Frameworks */,
+				CE686964183DA23400266FB5 /* Security.framework in Frameworks */,
+				CE686962183DA1FB00266FB5 /* Social.framework in Frameworks */,
+				CE686960183DA1F000266FB5 /* AdSupport.framework in Frameworks */,
+				CE68695E183DA1E100266FB5 /* Accounts.framework in Frameworks */,
 				CE9FD436183C94C50085423D /* UIKit.framework in Frameworks */,
 				CE9FD438183C94C50085423D /* Foundation.framework in Frameworks */,
 				CE9FD43A183C94C50085423D /* CoreGraphics.framework in Frameworks */,
+				CEB35E37183CA8750049CF71 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +96,12 @@
 		CE9FD434183C94C50085423D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE686965183DA75E00266FB5 /* libsqlite3.dylib */,
+				CE686963183DA23400266FB5 /* Security.framework */,
+				CE686961183DA1FB00266FB5 /* Social.framework */,
+				CE68695F183DA1F000266FB5 /* AdSupport.framework */,
+				CE68695D183DA1E100266FB5 /* Accounts.framework */,
+				CEB35E36183CA8750049CF71 /* FacebookSDK.framework */,
 				CE9FD435183C94C50085423D /* UIKit.framework */,
 				CE9FD437183C94C50085423D /* Foundation.framework */,
 				CE9FD439183C94C50085423D /* CoreGraphics.framework */,
@@ -85,9 +114,11 @@
 			children = (
 				CE9FD444183C94C50085423D /* GLHAppDelegate.h */,
 				CE9FD445183C94C50085423D /* GLHAppDelegate.m */,
-				CE9FD44D183C94C50085423D /* MainStoryboard.storyboard */,
 				CE9FD450183C94C50085423D /* GLHViewController.h */,
+				CE9FD44D183C94C50085423D /* MainStoryboard.storyboard */,
 				CE9FD451183C94C50085423D /* GLHViewController.m */,
+				CE68696D183DEDD600266FB5 /* forecastCell.h */,
+				CE68696E183DEDD600266FB5 /* forecastCell.m */,
 				CE9FD43C183C94C50085423D /* Supporting Files */,
 			);
 			path = usccsci571hw9;
@@ -96,6 +127,7 @@
 		CE9FD43C183C94C50085423D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE686970183F089700266FB5 /* forecast.jpg */,
 				CE9FD43D183C94C50085423D /* usccsci571hw9-Info.plist */,
 				CE9FD43E183C94C50085423D /* InfoPlist.strings */,
 				CE9FD441183C94C50085423D /* main.m */,
@@ -136,6 +168,11 @@
 				CLASSPREFIX = GLH;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = linghao;
+				TargetAttributes = {
+					CE9FD431183C94C50085423D = {
+						DevelopmentTeam = FB3PJKMSFJ;
+					};
+				};
 			};
 			buildConfigurationList = CE9FD42D183C94C50085423D /* Build configuration list for PBXProject "usccsci571hw9" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -161,6 +198,7 @@
 			files = (
 				CE9FD440183C94C50085423D /* InfoPlist.strings in Resources */,
 				CE9FD448183C94C50085423D /* Default.png in Resources */,
+				CE686971183F089700266FB5 /* forecast.jpg in Resources */,
 				CE9FD44A183C94C50085423D /* Default@2x.png in Resources */,
 				CE9FD44C183C94C50085423D /* Default-568h@2x.png in Resources */,
 				CE9FD44F183C94C50085423D /* MainStoryboard.storyboard in Resources */,
@@ -174,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE68696F183DEDD600266FB5 /* forecastCell.m in Sources */,
 				CE9FD442183C94C50085423D /* main.m in Sources */,
 				CE9FD446183C94C50085423D /* GLHAppDelegate.m in Sources */,
 				CE9FD452183C94C50085423D /* GLHViewController.m in Sources */,
@@ -261,10 +300,17 @@
 		CE9FD456183C94C50085423D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "usccsci571hw9/usccsci571hw9-Prefix.pch";
 				INFOPLIST_FILE = "usccsci571hw9/usccsci571hw9-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -272,10 +318,17 @@
 		CE9FD457183C94C50085423D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "usccsci571hw9/usccsci571hw9-Prefix.pch";
 				INFOPLIST_FILE = "usccsci571hw9/usccsci571hw9-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -299,6 +352,7 @@
 				CE9FD457183C94C50085423D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
