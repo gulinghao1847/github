@@ -49,7 +49,11 @@ NSDictionary* jsonData = nil;
     NSInteger valid = [self validate:location];
     tempUnitText = [self.tempUnit titleForSegmentAtIndex:self.tempUnit.selectedSegmentIndex];
     NSLog(@"%@",tempUnitText);
-    NSMutableString *url = [NSMutableString stringWithFormat:@"http://cs-server.usc.edu:22688/examples/servlet/weatherSearch?location=%@&type=%@&tempUnit=%@", location, type, tempUnitText];
+    NSMutableString *url = [NSMutableString stringWithFormat:@"http://cs-server.usc.edu:22688/examples/servlet/weatherSearch?location=%@&type=%@&tempUnit=%@",
+                            [location stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                            type,
+                            tempUnitText];
+    NSLog(@"%@",url);
     if (valid) {
         [self makeRequest:url];
     }
@@ -58,11 +62,25 @@ NSDictionary* jsonData = nil;
 }
 
 -(NSInteger)validate:(NSString*) myString{
+    if ([myString isEqualToString:@""]) {
+        [self showAlert:@"Input Is Empty!!"];
+        return 0;
+    }
     NSString* reg = @"^[0-9]*$";
     NSInteger result = [self regEx:reg regString:myString];
     if(result == 0){
         NSLog(@"City");
-        type = @"City";
+        NSString* reg1 = @"^[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+$";
+        NSString* reg2 = @"^[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+$";
+        NSInteger r1 = [self regEx:reg1 regString:myString];
+        NSInteger r2 = [self regEx:reg2 regString:myString];
+        NSLog(@"%d     %d",r1,r2);
+        if(r1 == 0 && r2 == 0){
+            [self showAlert:@"City Name should like the following format\nLos Angeles,CA"];
+            return 0;
+        }else{
+            type = @"City";
+        }
     }else{
         NSLog(@"Zip_Code");
         //ALL VALUES ARE NUMBERS
@@ -78,26 +96,6 @@ NSDictionary* jsonData = nil;
     return 1;
 }
 
--(void)showAlert:(NSString*) alterString{
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Announcement"
-                              message: alterString
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-}
-
--(NSInteger)regEx:(NSString*) pattern regString:(NSString*) myString{
-    NSError *error = NULL;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
-                                                                           options:NSRegularExpressionCaseInsensitive
-                                                                             error:&error];
-    NSUInteger numberOfMatches = [regex numberOfMatchesInString:myString
-                                                        options:0
-                                                          range:NSMakeRange(0, [myString length])];
-    return numberOfMatches;
-}
 
 //communiate with th/Users/linghao/Desktop/571hw9/571hw9/GLHViewController.he servlets
 -(void)makeRequest:(NSString*) url{
@@ -164,7 +162,7 @@ NSDictionary* jsonData = nil;
             }
             else
             {
-                NSLog(@"%@",[error localizedDescription]);
+                NSLog(@"in connection%@",[error localizedDescription]);
             }
             
             /* stop animating &amp; re-enable the fetch button */
@@ -205,11 +203,7 @@ NSDictionary* jsonData = nil;
     self.tempLabel.text = temp;
     
     //set collection view:
-    //NSArray* forecast = [jsonData objectForKey:@"forecast"];
-    //NSInteger num = [forecast count];
-    //for(NSInteger idx = 0; idx < num; idx++){
-        [self.weatherForecast reloadData];
-    //}
+    [self.weatherForecast reloadData];
 }
 
 -(void) loadImageFromUrl:(NSString*)urlString{
@@ -245,7 +239,7 @@ NSDictionary* jsonData = nil;
         return [NSString stringWithFormat:@"%@,",newString];
     }
 }
-- (IBAction)shareCurWeather:(id)sender {
+- (IBAction)shareCurrentWeather:(id)sender {
     NSDictionary* location = [jsonData objectForKey:@"location"];
     NSString* city = [self addCommasString:[location objectForKey:@"city"]];
     NSString* region = [self addCommasString:[location objectForKey:@"region"]];
@@ -282,6 +276,69 @@ NSDictionary* jsonData = nil;
 }
 
 - (IBAction)shareWeaFore:(id)sender {
+    NSDictionary* location = [jsonData objectForKey:@"location"];
+    NSString* city = [self addCommasString:[location objectForKey:@"city"]];
+    NSString* region = [self addCommasString:[location objectForKey:@"region"]];
+    NSString* country = [self getFinalString:[location objectForKey:@"country"]];
+    
+    NSString* area = [NSString stringWithFormat:@"%@%@%@",city, region, country];
+    
+    NSString* weather = [self getFinalString:[[jsonData objectForKey:@"condition"]
+                                              objectForKey:@"text"]];
+    
+    NSString* temperature = [self getFinalString:[[jsonData objectForKey:@"condition"]
+                                                  objectForKey:@"temp"]];
+    
+    NSString* img = @"http://cs-server.usc.edu:22688/examples/servlets/forecast.jpg";
+    NSString* feed = [[jsonData objectForKey:@"feed"]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString* link = [[jsonData objectForKey:@"link"]stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString* caption = [NSString stringWithFormat:@"Weather Forecast for %@", [self getFinalString:[location objectForKey:@"city"]]];
+    NSString* properties = [NSString stringWithFormat:@"{\"Look at details \":{\"href\":\"%@\",\"text\":\"here\"}}",link];
+    NSMutableString* description = [NSMutableString string];
+    /*
+     for(var i = 0; i < forecast.length;i++){
+     foreString += (forecast[i].day + ": " + forecast[i].text + ", " + forecast[i].high + "<sup>o</sup>F/" + forecast[i].low + "<sup>o</sup>F");
+     if(i == forecast.length - 1){
+     foreString += '.';
+     }else{
+     foreString += '; ';
+     }
+     }
+     */
+    NSArray* forecast = [jsonData objectForKey:@"forecast"];
+    NSLog(@"Count: !!!!%d",[forecast count]);
+    for (NSInteger idx = 0; idx < [forecast count]; idx++) {
+        NSDictionary* everydayForecast = [forecast objectAtIndex:idx];
+        [description appendFormat:@"%@: %@, %@/%@", [everydayForecast objectForKey:@"day"],
+                                                            [everydayForecast objectForKey:@"text"],
+                                                            [self getTemperature:[everydayForecast objectForKey:@"high"]],
+                                                            [self getTemperature:[everydayForecast objectForKey:@"low"]]
+                                                            ];
+        if(idx == [forecast count] - 1){
+            [description appendFormat:@"."];
+        }else{
+            [description appendFormat:@";"];
+        }
+    }
+    NSLog(@"%@",description);
+    
+    NSMutableDictionary *params =
+    [NSMutableDictionary dictionaryWithObjectsAndKeys:
+     area, @"name",
+     caption, @"caption",
+     description, @"description",
+     feed, @"link",
+     img, @"picture",
+     properties,@"properties",
+     nil];
+    [self postToWall:params];
+    
+}
+
+-(NSString*)getTemperature:(NSString*)temp
+{
+    return temp;
 }
 
 
@@ -358,6 +415,27 @@ NSDictionary* jsonData = nil;
     cell.highLabel.text = [NSString stringWithFormat:@"%@",[dayWeather objectForKey:@"high"]];
     cell.lowLabel.text = [NSString stringWithFormat:@"%@",[dayWeather objectForKey:@"low"]];
     return cell;
+}
+
+-(void)showAlert:(NSString*) alterString{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Announcement"
+                          message: alterString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+}
+
+-(NSInteger)regEx:(NSString*) pattern regString:(NSString*) myString{
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:myString
+                                                        options:0
+                                                          range:NSMakeRange(0, [myString length])];
+    return numberOfMatches;
 }
 
 //end of communication

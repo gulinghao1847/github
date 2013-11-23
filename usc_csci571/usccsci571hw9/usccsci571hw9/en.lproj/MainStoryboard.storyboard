@@ -73,18 +73,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uun-KF-ybb">
-                                <rect key="frame" x="131" y="197" width="181" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share Current Weather">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareCurWeather:" destination="2" eventType="touchUpInside" id="15u-S3-odk"/>
-                                    <action selector="shareCurrentWeather:" destination="2" eventType="touchUpInside" id="fq1-U2-CrW"/>
-                                    <action selector="shareWeather:" destination="2" eventType="touchUpInside" id="VNB-zA-pwb"/>
-                                </connections>
-                            </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IY1-LG-nzC">
                                 <rect key="frame" x="26" y="277" width="280" height="271"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +139,16 @@
                                     <action selector="shareWeaFore:" destination="2" eventType="touchUpInside" id="Zag-7Z-MVd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXX-HF-6xu">
+                                <rect key="frame" x="143" y="197" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share Current Weather">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareCurrentWeather:" destination="2" eventType="touchUpInside" id="sTA-VR-IRL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -161,7 +159,7 @@
                         <outlet property="cityLabel" destination="rdI-DX-aZY" id="Ogu-WS-FKl"/>
                         <outlet property="location" destination="oy0-Mw-Z9P" id="YUI-KY-tUe"/>
                         <outlet property="regionLabel" destination="3dJ-G7-8AL" id="owC-za-yqq"/>
-                        <outlet property="shareCur" destination="Uun-KF-ybb" id="3lU-tQ-gSy"/>
+                        <outlet property="shareCurrentWeather" destination="KXX-HF-6xu" id="6cn-3l-ls0"/>
                         <outlet property="shareWeatherForecast" destination="Y6V-SK-Mrm" id="bWU-Y6-Zhb"/>
                         <outlet property="tempImage" destination="f9A-i2-pic" id="FKY-La-HiF"/>
                         <outlet property="tempLabel" destination="H6K-KM-JhQ" id="9Qd-02-MCz"/>

@@ -28,7 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *shareCur;
+@property (weak, nonatomic) IBOutlet UIButton *shareCurrentWeather;
 
 //@property (weak, nonatomic) IBOutlet UIButton *shareFore;
 
