@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property (weak, nonatomic) IBOutlet UILabel *highLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lowLabel;
-
 @end

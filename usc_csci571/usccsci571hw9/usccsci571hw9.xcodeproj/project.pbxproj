@@ -26,6 +26,7 @@
 		CE9FD44F183C94C50085423D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9FD44D183C94C50085423D /* MainStoryboard.storyboard */; };
 		CE9FD452183C94C50085423D /* GLHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FD451183C94C50085423D /* GLHViewController.m */; };
 		CEB35E37183CA8750049CF71 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB35E36183CA8750049CF71 /* FacebookSDK.framework */; };
+		CECD9EE4185040C500127A23 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CECD9EE3185040C500127A23 /* sky.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CE9FD450183C94C50085423D /* GLHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLHViewController.h; sourceTree = "<group>"; };
 		CE9FD451183C94C50085423D /* GLHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLHViewController.m; sourceTree = "<group>"; };
 		CEB35E36183CA8750049CF71 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		CECD9EE3185040C500127A23 /* sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				CE686970183F089700266FB5 /* forecast.jpg */,
 				CE9FD43D183C94C50085423D /* usccsci571hw9-Info.plist */,
 				CE9FD43E183C94C50085423D /* InfoPlist.strings */,
+				CECD9EE3185040C500127A23 /* sky.jpg */,
 				CE9FD441183C94C50085423D /* main.m */,
 				CE9FD443183C94C50085423D /* usccsci571hw9-Prefix.pch */,
 				CE9FD447183C94C50085423D /* Default.png */,
@@ -201,6 +204,7 @@
 				CE686971183F089700266FB5 /* forecast.jpg in Resources */,
 				CE9FD44A183C94C50085423D /* Default@2x.png in Resources */,
 				CE9FD44C183C94C50085423D /* Default-568h@2x.png in Resources */,
+				CECD9EE4185040C500127A23 /* sky.jpg in Resources */,
 				CE9FD44F183C94C50085423D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

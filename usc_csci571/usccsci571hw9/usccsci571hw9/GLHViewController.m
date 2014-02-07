@@ -13,16 +13,20 @@
 
 @property (nonatomic, strong) NSMutableData   *buffer;
 @property (nonatomic, strong) NSURLConnection *connection;
+@property BOOL navigateAwayFromTab;
 
 @end
 
 @implementation GLHViewController
 
 @synthesize location = _location;
-NSString* location;
+NSString* locationText;
 NSString* type;
 NSString* tempUnitText;
 NSDictionary* jsonData = nil;
+NSInteger postInformationToWall;
+bool questionAnswered = FALSE;
+NSCondition *condition;
 
 - (void)viewDidLoad
 {
@@ -35,6 +39,31 @@ NSDictionary* jsonData = nil;
     self.weatherForecast.dataSource = self;
     
     //self.weatherForecast = nil;
+    
+    //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"sky.jpg"]];
+    UIImage* _backGround = [UIImage imageNamed:@"sky.jpg"];
+    UIImageView* _backGroundView = [[UIImageView alloc] initWithImage:_backGround];
+    
+    _backGroundView.frame = self.view.frame;
+    
+    [self.view addSubview:_backGroundView];
+    [self.view sendSubviewToBack:_backGroundView];
+    
+    self.cityLabel.textColor = [UIColor whiteColor];
+    self.regionLabel.textColor = [UIColor whiteColor];
+    self.weatherLabel.textColor = [UIColor whiteColor];
+    self.tempLabel.textColor = [UIColor whiteColor];
+    self.forecastLable.textColor = [UIColor whiteColor];
+    self.wrongWeather.textColor = [UIColor whiteColor];
+
+    self.DateLabelText.textColor = [UIColor whiteColor];
+    self.weatherLabelText.textColor = [UIColor whiteColor];
+    self.HighLabelText.textColor = [UIColor whiteColor];
+    self.lowLabelText.textColor = [UIColor whiteColor];
+    
+    
+    self.wrongWeather.numberOfLines = 2;
+    self.weatherLabel.numberOfLines = 2;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,12 +74,17 @@ NSDictionary* jsonData = nil;
 
 
 - (IBAction)weatherSearch:(id)sender {
-    location = self.location.text;
-    NSInteger valid = [self validate:location];
+    locationText = self.location.text;
+    NSInteger valid = [self validate:locationText];
     tempUnitText = [self.tempUnit titleForSegmentAtIndex:self.tempUnit.selectedSegmentIndex];
     NSLog(@"%@",tempUnitText);
+    //NSString* urlEncodingLocation = [locationText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    locationText = [locationText stringByReplacingOccurrencesOfString:@"," withString:@"%2C"];
+    locationText = [locationText stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    locationText = [locationText stringByReplacingOccurrencesOfString:@"'" withString:@""];
     NSMutableString *url = [NSMutableString stringWithFormat:@"http://cs-server.usc.edu:22688/examples/servlet/weatherSearch?location=%@&type=%@&tempUnit=%@",
-                            [location stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                            locationText,
                             type,
                             tempUnitText];
     NSLog(@"%@",url);
@@ -70,8 +104,11 @@ NSDictionary* jsonData = nil;
     NSInteger result = [self regEx:reg regString:myString];
     if(result == 0){
         NSLog(@"City");
-        NSString* reg1 = @"^[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+$";
-        NSString* reg2 = @"^[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+,[a-zA-Z0-9- ]+$";
+        NSString* test = @"^[.a-zA-Z0-9 -]+,$";
+        NSInteger test1 = [self regEx:test regString:myString];
+        NSLog(@"%d",test1);
+        NSString* reg1 = @"^['.a-zA-Z0-9 -]+,['.a-zA-Z0-9 -]+$";
+        NSString* reg2 = @"^['.a-zA-Z0-9 -]+,['.a-zA-Z0-9 -]+,['.a-zA-Z0-9 -]+$";
         NSInteger r1 = [self regEx:reg1 regString:myString];
         NSInteger r2 = [self regEx:reg2 regString:myString];
         NSLog(@"%d     %d",r1,r2);
@@ -79,7 +116,7 @@ NSDictionary* jsonData = nil;
             [self showAlert:@"City Name should like the following format\nLos Angeles,CA"];
             return 0;
         }else{
-            type = @"City";
+            type = @"city";
         }
     }else{
         NSLog(@"Zip_Code");
@@ -163,6 +200,11 @@ NSDictionary* jsonData = nil;
             else
             {
                 NSLog(@"in connection%@",[error localizedDescription]);
+                [self clearAllLable];
+                [self.weatherForecast reloadData];
+                jsonData = nil;
+                self.wrongWeather.text = @"Weather Information \ncan't be found!";
+                [self setTableLabel:1];
             }
             
             /* stop animating &amp; re-enable the fetch button */
@@ -178,6 +220,7 @@ NSDictionary* jsonData = nil;
 //parse jsonData and put value
 -(void) parseJson{
     //
+    self.wrongWeather.text = @"";
     NSDictionary* location = [jsonData objectForKey:@"location"];
     NSString* cityText = [location objectForKey:@"city"];
     NSString* region = [location objectForKey:@"region"];
@@ -196,7 +239,7 @@ NSDictionary* jsonData = nil;
     self.weatherLabel.text = weather;
     
     //set the temperature information
-    NSString* temp = [NSString stringWithFormat:@"%@%@",
+    NSString* temp = [NSString stringWithFormat:@"%@°%@",
                       [[jsonData objectForKey:@"condition"] objectForKey:@"temp"],
                       [[jsonData objectForKey:@"units"] objectForKey:@"temperature"]
                       ];
@@ -204,6 +247,10 @@ NSDictionary* jsonData = nil;
     
     //set collection view:
     [self.weatherForecast reloadData];
+    
+    //
+    //self.forecastLable.text = @"Forecast";
+    [self setTableLabel:0];
 }
 
 -(void) loadImageFromUrl:(NSString*)urlString{
@@ -276,6 +323,7 @@ NSDictionary* jsonData = nil;
 }
 
 - (IBAction)shareWeaFore:(id)sender {
+
     NSDictionary* location = [jsonData objectForKey:@"location"];
     NSString* city = [self addCommasString:[location objectForKey:@"city"]];
     NSString* region = [self addCommasString:[location objectForKey:@"region"]];
@@ -296,25 +344,16 @@ NSDictionary* jsonData = nil;
     NSString* caption = [NSString stringWithFormat:@"Weather Forecast for %@", [self getFinalString:[location objectForKey:@"city"]]];
     NSString* properties = [NSString stringWithFormat:@"{\"Look at details \":{\"href\":\"%@\",\"text\":\"here\"}}",link];
     NSMutableString* description = [NSMutableString string];
-    /*
-     for(var i = 0; i < forecast.length;i++){
-     foreString += (forecast[i].day + ": " + forecast[i].text + ", " + forecast[i].high + "<sup>o</sup>F/" + forecast[i].low + "<sup>o</sup>F");
-     if(i == forecast.length - 1){
-     foreString += '.';
-     }else{
-     foreString += '; ';
-     }
-     }
-     */
+    
     NSArray* forecast = [jsonData objectForKey:@"forecast"];
     NSLog(@"Count: !!!!%d",[forecast count]);
     for (NSInteger idx = 0; idx < [forecast count]; idx++) {
         NSDictionary* everydayForecast = [forecast objectAtIndex:idx];
         [description appendFormat:@"%@: %@, %@/%@", [everydayForecast objectForKey:@"day"],
-                                                            [everydayForecast objectForKey:@"text"],
-                                                            [self getTemperature:[everydayForecast objectForKey:@"high"]],
-                                                            [self getTemperature:[everydayForecast objectForKey:@"low"]]
-                                                            ];
+         [everydayForecast objectForKey:@"text"],
+         [self getTemperature:[everydayForecast objectForKey:@"high"]],
+         [self getTemperature:[everydayForecast objectForKey:@"low"]]
+         ];
         if(idx == [forecast count] - 1){
             [description appendFormat:@"."];
         }else{
@@ -333,7 +372,6 @@ NSDictionary* jsonData = nil;
      properties,@"properties",
      nil];
     [self postToWall:params];
-    
 }
 
 -(NSString*)getTemperature:(NSString*)temp
@@ -406,14 +444,26 @@ NSDictionary* jsonData = nil;
     static NSString* cellIdentifier = @"Cell";
     forecastCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     if (jsonData == nil) {
+        cell.dateLabel.text = @"";
+        cell.weatherLabel.text = @"";
+        cell.highLabel.text = @"";
+        cell.lowLabel.text = @"";
+        //self.forecastLable.text = @"";
         return cell;
     }
+    
     NSArray* forecast = [jsonData objectForKey:@"forecast"];
     NSDictionary* dayWeather = [forecast objectAtIndex:indexPath.item];
     cell.dateLabel.text = [dayWeather objectForKey:@"day"];
+    cell.dateLabel.textColor = [UIColor whiteColor];
     cell.weatherLabel.text = [dayWeather objectForKey:@"text"];
-    cell.highLabel.text = [NSString stringWithFormat:@"%@",[dayWeather objectForKey:@"high"]];
-    cell.lowLabel.text = [NSString stringWithFormat:@"%@",[dayWeather objectForKey:@"low"]];
+    cell.weatherLabel.textColor = [UIColor whiteColor];
+    cell.weatherLabel.lineBreakMode = UILineBreakModeCharacterWrap;
+    cell.weatherLabel.numberOfLines = 3;
+    cell.highLabel.text = [self showTemperature: [dayWeather objectForKey:@"high"]];//[dayWeather objectForKey:@"high"]];
+    cell.highLabel.textColor = [UIColor whiteColor];
+    cell.lowLabel.text = [self showTemperature: [dayWeather objectForKey:@"low"]];
+    cell.lowLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -437,6 +487,39 @@ NSDictionary* jsonData = nil;
                                                           range:NSMakeRange(0, [myString length])];
     return numberOfMatches;
 }
+
+-(NSString*)showTemperature:(NSString*) temp{
+    NSString* newTemp = [NSString stringWithFormat:@"%@°%@",temp,tempUnitText];
+    return newTemp;
+}
+
+-(void)clearAllLable{
+    self.cityLabel.text = @"";
+    self.regionLabel.text = @"";
+    self.tempImage.image = nil;
+    self.weatherLabel.text = @"";
+    self.tempLabel.text = @"";
+    self.wrongWeather.text = @"";
+}
+
+-(void)setTableLabel:(NSInteger)isClear{
+    if(isClear == 1)//clear the label
+    {
+        self.forecastLable.text = @"";
+        self.DateLabelText.text = @"";
+        self.weatherLabelText.text = @"";
+        self.HighLabelText.text = @"";
+        self.lowLabelText.text = @"";
+    }else{
+        self.forecastLable.text = @"Forecast";
+        self.DateLabelText.text = @"Date";
+        self.weatherLabelText.text = @"Weather";
+        self.HighLabelText.text = @"High";
+        self.lowLabelText.text = @"Low";
+    }
+}
+
+
 
 //end of communication
 @end

@@ -32,9 +32,9 @@ public:
                 break;
             }
             end = s.top();
-            s.pop();
+            s.pop();   // end = s.top(); s.pop(); 和front ＝ temp； 这两行没法替换， 不然最后一个end －》 next 就会报错了 
         }
         
-        end -> next = NULL;
+        end -> next = NULL;// 这里也要注意， 最后的end 需要 next ＝ null 不然就形成环了
     }
 };

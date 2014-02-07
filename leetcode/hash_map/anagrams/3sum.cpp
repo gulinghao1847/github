@@ -19,6 +19,7 @@ public:
             sort(s.begin(), s.end());
             mp[s].push_back(*it);
         }
+		
         map<string, vector<string>>::iterator iter;
         for(iter = mp.begin(); iter != mp.end(); iter++){
             if(iter -> second.size() > 1){

@@ -28,10 +28,6 @@ public class weatherSearch extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		String url = "http://csci571hw8linghao-env.elasticbeanstalk.com/input.php";
 		String query = url + "?location=" + URLEncoder.encode(location,"UTF-8") + "&type=" + type + "&tempUnit="+tempUnit;
-		System.out.println(query);
-		System.out.println(location);
-		System.out.println(type);
-		System.out.println(tempUnit);
 		URL myUrl = new URL(query);
 		URLConnection urlCon = myUrl.openConnection();
 		urlCon.setAllowUserInteraction(false);

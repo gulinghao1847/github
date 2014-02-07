@@ -63,6 +63,8 @@
 					],
 					caption:"Forecast"
 				});
+				
+				
 				var tableDiv = Y.one('#forecastTable');
 				table.render(tableDiv);
 				
@@ -255,6 +257,7 @@
 			url = url.replace(/ /g, '+');
 			url = url.replace(/,/g, '%2C');
 			unit = "F";
+			alert(url);
 			//alert(url);
 			if(window.XMLHttpRequest){
 				xhr = new XMLHttpRequest();
@@ -312,23 +315,7 @@
 			}
 			return 1; 
 		}
-		/*
-		YUI().use('node','event','stylesheet', function(Y){
-			var button = Y.one('#upload');
-			button.on('click', function(cf){
-				alert("1234");
-				if(validation()) request();
-			});
-		});
-		*/
-		/*
-		YUI().use('node','event','stylesheet', function(Y){
-			var button = Y.one('#postFB');
-			button.on('click',function(cf){
-				alert("success");
-			});
-		});
-		*/
+		
 		window.onload = loadFB();
 		// onclick = 'validation()&&request()' 
 		</script>
