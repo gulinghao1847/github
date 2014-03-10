@@ -42,4 +42,43 @@ public:
         return res;
     }
 };
+/*
+New Version:
+*/
+class Solution {
+public:
+    int getInt(char x){
+        return x - '0';
+    }
+    string addBinary(string a, string b) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        string result;
+        int i = 0;
+        int j = 0;
+        int carry = 0;
+        int sum = 0;
+        reverse(a.begin(), a.end());
+        reverse(b.begin(), b.end());
+        while(i < a.size() || j < b.size()){
+            int first = i < a.size() ? getInt(a[i]) : 0;
+            int second = j < b.size() ? getInt(b[j]) : 0;
+            sum = carry + first + second;
+            if(sum >= 2){
+                carry = 1;
+                sum = sum - 2;
+            }else{
+                carry = 0;
+            }
+            result.push_back(sum + '0');
+            i++;
+            j++;
+        }
+        if(carry == 1){
+            result.push_back('1');
+        }
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
 
