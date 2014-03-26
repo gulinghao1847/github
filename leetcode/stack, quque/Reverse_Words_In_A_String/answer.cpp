@@ -47,3 +47,54 @@ public:
     }
 };
 
+
+class Solution {
+public:
+    /**the aim of this function is to reverse the string word by word in place
+     */
+    void reverseWords(string &s) {
+       string tempString; /** < words temporaly store in this string */
+       stack<string> st; /** <words are stored in this stack. */
+       /**Using a foor loop to get all word
+        */
+        s.push_back(' ');
+       for(int i = 0; i < s.size(); i++){
+           /**if the letter is space, 
+            * push the tempString into the stack and clear it if tempString is not empty.
+            */
+            if(s[i] == ' '){
+                if(tempString.size() > 0){
+                    st.push(tempString);
+                    tempString.clear();
+                }
+                /**
+                 * neglect all spaces
+                 */
+                while((i + 1 < s.size()) && s[i + 1] == ' ') i++;
+                continue;
+            }
+            /**if the letter is not space, push it into the string
+             */
+            else{
+                tempString.push_back(s[i]);
+            }
+       }
+       /**push all the words into the original string
+        */
+        s.clear();
+        while(!st.empty()){
+            tempString.clear();
+            /**get the first word in the stack
+             */
+            tempString = st.top();
+            st.pop();
+            /**combine the string
+            */
+            s = s + tempString;
+            if(!st.empty()) s = s + " ";
+        }
+    }
+};
+/**
+*	add a ' ' to the end of s avoid additional check on this string !
+*/

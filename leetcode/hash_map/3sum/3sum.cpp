@@ -56,3 +56,50 @@ public:
         return result;
     }
 };
+
+
+class Solution {
+public:
+    vector<vector<int> > threeSum(vector<int> &num) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        vector<vector<int>> result;
+        sort(num.begin(), num.end());
+        int size = num.size();
+        vector<int> temp(3, 0);
+        unordered_map<int, int> mp;//remember clearing it after each for loop
+        for(int i = 0; i < (size - 2); i++){
+            int first = i;
+            int second = i + 1;
+            int third = size - 1;
+            //int last = 0;
+            while(second < third){
+                int sum = num[first] + num[second] + num[third];
+                if(sum > 0){
+                    third--;
+                }else if(sum < 0){
+                    second++;
+                }else if(sum == 0){
+                    if(mp.find(num[second]) == mp.end()){
+                        mp[num[second]] = num[third];
+                        temp[0] = num[first];
+                        temp[1] = num[second];
+                        temp[2] = num[third];
+                        result.push_back(temp);
+                    }
+                    second++;
+                    third--;
+                }
+            }
+            mp.clear();
+            while((i + 1 < size) && num[i + 1] == num[i]) i++;
+        }
+        return result;
+    }
+};
+
+/**In the above implementation, many mistakes have been made.
+*(1) the returned value of size() function is unsigned, so there are 2 solutions for it: 1. cast it to int    2.using unsigned all the time 
+* I prefer the first solution
+*(2)about hashMap, remember what is the key-value pairs !!!!!
+*/

@@ -34,3 +34,39 @@ public:
         return intervals;
     }
 };
+
+//The fourth condition else if(newInterval.end() > interval[i].end) may make this function become n^2, erase function take O(n) time.So we should avoid this. so we creat a new vector
+class Solution {
+public:
+    vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        
+        vector<Interval> res;
+        bool isLarge;
+        vector<Interval> :: iterator it=intervals.begin();
+        for(;it!=intervals.end();it++)
+        {
+            if(it->end<newInterval.start)
+            {
+                res.push_back(*it);
+                continue;
+            }
+            else if(it->start>newInterval.end)
+            {
+                if(isLarge)
+                {
+                    res.push_back(newInterval);
+                    isLarge=false;
+                }
+                res.push_back(*it);
+                continue;
+            }
+            newInterval.start= newInterval.start>it->start? it->start:newInterval.start;
+            newInterval.end= newInterval.end>it->end? newInterval.end : it->end;
+        }
+        if(isLarge)
+        res.push_back(newInterval);
+        return res;
+    }
+};
