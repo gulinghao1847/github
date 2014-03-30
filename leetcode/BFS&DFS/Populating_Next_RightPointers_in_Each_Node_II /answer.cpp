@@ -72,3 +72,52 @@ public:
     }
 };
 
+
+/**
+ * Definition for binary tree with next pointer.
+ * struct TreeLinkNode {
+ *  int val;
+ *  TreeLinkNode *left, *right, *next;
+ *  TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+ * };
+ */
+/*
+constant space:
+work just like bfs, with the next pointer
+*/
+class Solution {
+TreeLinkNode* nextLeftMost;
+public:
+    void checkNode(TreeLinkNode* node, TreeLinkNode*& pre){
+        if(pre == NULL){
+            pre = node;
+            nextLeftMost = node;
+        }else{
+            pre -> next = node;
+            pre = pre -> next;
+        }
+    }
+    void connect(TreeLinkNode *root) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        TreeLinkNode* leftMost = root;
+        nextLeftMost = NULL;
+        while(leftMost){
+            TreeLinkNode* cur = leftMost;
+            TreeLinkNode* pre = NULL;
+            while(cur){
+                if(cur -> left){
+                    checkNode(cur -> left, pre);
+                }
+                if(cur -> right){
+                    checkNode(cur -> right, pre);
+                }
+                cur = cur -> next;
+            }
+            leftMost = nextLeftMost;
+            nextLeftMost = NULL;
+            pre = NULL;
+        }
+    }
+};
+

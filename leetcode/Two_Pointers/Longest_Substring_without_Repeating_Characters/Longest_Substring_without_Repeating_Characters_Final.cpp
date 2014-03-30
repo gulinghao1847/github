@@ -78,3 +78,37 @@ public:
 };
 
 //第二种情况，  一开始没有加入71-72行， 总是报错， 和第一种情况每次for循环都对max更新不一样， 第二种情况只对发生了重复的时候进行更新， 因此有可能了最后不会产生重复， 但是最后一个却是最大的例子：string ＝ “qopubjguxhxdipfzwswybgfylqvjzhar”
+
+/*
+version 3
+*/
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int maxLen = 0;
+        int start = 0;
+        vector<int> check(256, 0);
+        for(int i = 0; i < s.size(); i++){
+            if(check[s[i]] == 0){
+                check[s[i]] = 1;
+            }else{
+                check[s[i]]++;
+                while(check[s[start]] == 1){
+                    check[s[start]]--;
+                    start++;
+                }
+                check[s[start]]--;
+                start++;
+            }
+            if(maxLen < i - start + 1){
+                maxLen = i - start + 1;
+            }
+        }
+        return maxLen;
+    }
+};
+
+/*
+先写算法再写代码， 注意102行
+*/
