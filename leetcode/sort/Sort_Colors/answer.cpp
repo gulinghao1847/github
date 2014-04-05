@@ -36,3 +36,34 @@ public:
     }
 };
 
+
+/*
+one pass
+*/
+class Solution {
+public:
+    void sortColors(int A[], int n) {
+        int redCur = 0;
+        int blueCur = n - 1;
+        for(int i = 0; i <= blueCur; i++){
+            if(A[i] == 1){
+                continue;
+            }else if(A[i] == 0){
+                A[i] = A[redCur];
+                A[redCur] = 0;
+                if(redCur != i) i--;
+                redCur++;
+                //i--;
+            }else if(A[i] == 2){
+                A[i] = A[blueCur];
+                A[blueCur] = 2;
+                if(blueCur != i) i--;
+                blueCur--;
+                //i--;
+            }
+        }
+    }
+};
+
+/*
+54行， 防止死循环， for loop终止的条件应该是<= blueCur 而不是n

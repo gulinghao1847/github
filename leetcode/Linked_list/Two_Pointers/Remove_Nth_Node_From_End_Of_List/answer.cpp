@@ -47,3 +47,35 @@ public:
     }
 };
 
+/*
+version 2
+*/
+class Solution {
+public:
+    ListNode *removeNthFromEnd(ListNode *head, int n) {
+        ListNode* first = head;
+        ListNode* second = head;
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode* pre = &dummy;
+        int count = n - 1;
+        //go n - 1 steps first
+        while(first -> next != NULL && count > 0){
+            first = first -> next;
+            count--;
+        }
+		
+        //run
+        while(first -> next != NULL){
+            first = first -> next;
+            pre = second;
+            second = second -> next;
+        }
+        
+		//delete
+        pre -> next = second -> next;
+		//return
+        return dummy.next;
+    }
+};
+

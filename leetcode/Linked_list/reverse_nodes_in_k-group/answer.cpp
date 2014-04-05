@@ -25,32 +25,36 @@ For k = 3, you should return: 3->2->1->4->5
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+/*
+delete node and add node in a linked list
+and cur!!!!!!some data may change, like cur -> next. So we need to store them.
+*/
 class Solution {
 public:
     ListNode *reverseKGroup(ListNode *head, int k) {
-        ListNode* dummy = new ListNode(0);
-        dummy -> next = head;
-        ListNode* pre = dummy;
-        ListNode* cur = head;
-        if(head == NULL) return head;
-        stack<ListNode*> s;
+        if(k <= 1) return head;
+        ListNode dummy(0);
+        dummy.next = head;
         int count = 0;
+        stack<ListNode*> st;
+        ListNode* cur = head;
+        ListNode* pre = &dummy;
         while(cur != NULL){
+            st.push(cur);
             count++;
-            s.push(cur);
             ListNode* temp = cur -> next;
             if(count == k){
-                while(!s.empty()){
-                    pre -> next = s.top();
-                    s.pop();
+                count = 0;
+                while(!st.empty()){
+                    pre -> next = st.top();
+                    st.pop();
                     pre = pre -> next;
                 }
-                count = 0;
                 pre -> next = temp;
             }
             cur = temp;
         }
-        return dummy -> next;
+        return dummy.next;
     }
 };
 
