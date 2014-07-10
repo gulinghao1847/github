@@ -57,3 +57,38 @@ from line31 to line 35, important! track the pre pointer
 line 39, dont write as: ListNode* iter = head; cause head is not the next point of dummy!
 */
 
+//new method, treat sorted list and unsorted list differently
+
+class Solution {
+public:
+    ListNode *insertionSortList(ListNode *head) {
+        if(!head) return NULL;
+        ListNode* dummy = new ListNode(INT_MIN);
+        dummy -> next = head;
+        ListNode* unsorted = head -> next;
+        head -> next = NULL;
+        while(unsorted){
+            ListNode* insertValue = unsorted;
+            unsorted = unsorted -> next;
+            /*important!!!!!*/ListNode* cur = dummy -> next;
+            ListNode* last = dummy;
+            bool done = false;
+            while(cur){
+                if(insertValue -> val < cur -> val){
+                    last -> next = insertValue;
+                    insertValue -> next = cur;
+                    done = true;
+                    break;
+                }else{
+                    last = cur;
+                    cur = cur -> next;
+                }
+            }
+            if(!done){
+                last -> next = insertValue;
+                insertValue -> next = NULL;
+            }
+        }
+        return dummy -> next;
+    }
+};

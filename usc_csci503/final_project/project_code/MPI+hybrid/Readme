@@ -1,0 +1,18 @@
+In this part, we have three programs. 
+First: quicksort_MPI 
+This program has two parameters.
+Size of array and number of nodes.
+We assume the size of array is 1000 and number of nodes is 2
+So, we can run this program like this : mpirun --hostfile hosts -np 2 ./quicksort_MPI 1000 2
+
+Second: quicksort_topology 
+This program has two parameters.
+Size of array and number of nodes.
+We assume the size of array is 1000 and number of nodes is 2
+So, we can run this program like this : mpirun --hostfile hosts -np 2 ./quicksort_topology 1000 2
+
+Third: hybrid
+This program has three parameters.
+Size of array , number of nodes and number of threads.
+We assume the size of array is 1000 and number of nodes is 2 and thread number is 2
+So, we can run this program like this : mpirun --hostfile hosts -np 2 ./quicksort_MPI 1000 2 2

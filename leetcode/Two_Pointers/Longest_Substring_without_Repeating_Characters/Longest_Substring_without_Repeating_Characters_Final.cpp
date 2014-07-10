@@ -112,3 +112,31 @@ public:
 /*
 先写算法再写代码， 注意102行
 */
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int maxLen = 0;
+        int start = 0;
+        vector<bool> mp(256, false);
+        int localLen = 0;
+        
+        for(int i = 0; i < s.size(); i++){
+            if(mp[s[i]] == false){
+                mp[s[i]] = true;
+                localLen++;
+            }else{
+                maxLen = max(localLen, maxLen);
+                while(s[start] != s[i]){
+                    mp[s[start++]] = false;
+                    localLen--;
+                }
+                start++;
+                //mp[s[start++]] = false;
+            }
+        }
+        
+        maxLen = max(localLen, maxLen);
+        return maxLen;
+    }
+};

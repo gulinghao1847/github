@@ -1,0 +1,2302 @@
+Inserted "23c8c15f" (node 1):
+
+23c8c15f
+ +-- NULL
+ \-- NULL
+
+Inserted "59e5" (node 2):
+
+23c8c15f
+ +-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- NULL
+
+Inserted "e60d782c" (node 3):
+
+23c8c15f
+ +-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- NULL
+           \-- NULL
+
+Inserted "1002" (node 4):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- NULL
+           \-- NULL
+
+Inserted "1a9e2f6a4f3f" (node 5):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- NULL
+           \-- NULL
+
+Inserted "1bce1fa6a086" (node 6):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- NULL
+           \-- NULL
+
+Inserted "c2bfdf52f5" (node 7):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- NULL
+           |    \-- NULL
+           \-- NULL
+
+Inserted "d545c22ad982" (node 8):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Inserted "6f87de" (node 9):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Inserted "af8d1317" (node 10):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Inserted "e8e67a6d" (node 11):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "2cf9" (node 12):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "a8ee53d0" (node 13):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "303e" (node 14):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "2f50cb9929d8" (node 15):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "601e26355dac" (node 16):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "a491907806" (node 17):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "1ab7" (node 18):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "c6e7325fbd" (node 19):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "9aa8ba7288" (node 20):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "c9559ed50dde" (node 21):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "1990b9" (node 22):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- NULL
+
+Inserted "f337379a" (node 23):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "4a5ca452" (node 24):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "1b78602f" (node 25):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "bc854ef7c9" (node 26):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "190b6bc1bc" (node 27):
+
+23c8c15f
+ +-- 1002
+ |    +-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "0bb647" (node 28):
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "4b16b0bb" (node 29):
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "6190" (node 30):
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "7ab6fe1d" (node 31):
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- 7ab6fe1d
+           |    |         |    |    |    |    +-- NULL
+           |    |         |    |    |    |    \-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Inserted "218792b9" (node 32):
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1ab7
+ |              |    +-- NULL
+ |              |    \-- 1b78602f
+ |              |         +-- NULL
+ |              |         \-- NULL
+ |              \-- 218792b9
+ |                   +-- NULL
+ |                   \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- 7ab6fe1d
+           |    |         |    |    |    |    +-- NULL
+           |    |         |    |    |    |    \-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+Deleted "1ab7":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1b78602f
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- 218792b9
+ |                   +-- NULL
+ |                   \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a8ee53d0
+           |    |         |    +-- a491907806
+           |    |         |    |    +-- 9aa8ba7288
+           |    |         |    |    |    +-- 7ab6fe1d
+           |    |         |    |    |    |    +-- NULL
+           |    |         |    |    |    |    \-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "a8ee53d0":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1a9e2f6a4f3f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- 1b78602f
+ |              |    +-- NULL
+ |              |    \-- NULL
+ |              \-- 218792b9
+ |                   +-- NULL
+ |                   \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "1a9e2f6a4f3f":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1b78602f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- 218792b9
+ |                   +-- NULL
+ |                   \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- bc854ef7c9
+           |    |              +-- NULL
+           |    |              \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "bc854ef7c9":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1b78602f
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 1bce1fa6a086
+ |              +-- NULL
+ |              \-- 218792b9
+ |                   +-- NULL
+ |                   \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "1b78602f":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 2cf9
+      |    +-- NULL
+      |    \-- 303e
+      |         +-- 2f50cb9929d8
+      |         |    +-- NULL
+      |         |    \-- NULL
+      |         \-- 4a5ca452
+      |              +-- NULL
+      |              \-- 4b16b0bb
+      |                   +-- NULL
+      |                   \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "2cf9":
+
+23c8c15f
+ +-- 1002
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- 190b6bc1bc
+ |         |    |    +-- NULL
+ |         |    |    \-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- 2f50cb9929d8
+      |    |    +-- NULL
+      |    |    \-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- 4b16b0bb
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "1002":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- 2f50cb9929d8
+      |    |    +-- NULL
+      |    |    \-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- 4b16b0bb
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- e8e67a6d
+                +-- NULL
+                \-- f337379a
+                     +-- NULL
+                     \-- NULL
+
+Deleted "e8e67a6d":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- 2f50cb9929d8
+      |    |    +-- NULL
+      |    |    \-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- 4b16b0bb
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- 6190
+           |    |    |         +-- NULL
+           |    |    |         \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "6190":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- 2f50cb9929d8
+      |    |    +-- NULL
+      |    |    \-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- 4b16b0bb
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "2f50cb9929d8":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- 4b16b0bb
+      |              +-- NULL
+      |              \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "4b16b0bb":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 59e5
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- 601e26355dac
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "59e5":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 601e26355dac
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- a491907806
+           |    |         |    +-- 9aa8ba7288
+           |    |         |    |    +-- 7ab6fe1d
+           |    |         |    |    |    +-- NULL
+           |    |         |    |    |    \-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "a491907806":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 601e26355dac
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c2bfdf52f5
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c6e7325fbd
+           |         |    +-- NULL
+           |         |    \-- c9559ed50dde
+           |         |         +-- NULL
+           |         |         \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "c2bfdf52f5":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 601e26355dac
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- e60d782c
+           +-- c6e7325fbd
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- f337379a
+                +-- NULL
+                \-- NULL
+
+Deleted "e60d782c":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1bce1fa6a086
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- 218792b9
+ |              +-- NULL
+ |              \-- NULL
+ \-- 601e26355dac
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- f337379a
+           +-- c6e7325fbd
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Deleted "1bce1fa6a086":
+
+23c8c15f
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 218792b9
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- 303e
+      |    +-- NULL
+      |    \-- 4a5ca452
+      |         +-- NULL
+      |         \-- NULL
+      \-- f337379a
+           +-- c6e7325fbd
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Deleted "23c8c15f":
+
+303e
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 218792b9
+ |         +-- 1990b9
+ |         |    +-- NULL
+ |         |    \-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- 4a5ca452
+      |    +-- NULL
+      |    \-- NULL
+      \-- f337379a
+           +-- c6e7325fbd
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Deleted "218792b9":
+
+303e
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- 4a5ca452
+      |    +-- NULL
+      |    \-- NULL
+      \-- f337379a
+           +-- c6e7325fbd
+           |    +-- 6f87de
+           |    |    +-- NULL
+           |    |    \-- af8d1317
+           |    |         +-- 9aa8ba7288
+           |    |         |    +-- 7ab6fe1d
+           |    |         |    |    +-- NULL
+           |    |         |    |    \-- NULL
+           |    |         |    \-- NULL
+           |    |         \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Deleted "6f87de":
+
+303e
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- 4a5ca452
+      |    +-- NULL
+      |    \-- NULL
+      \-- f337379a
+           +-- c6e7325fbd
+           |    +-- af8d1317
+           |    |    +-- 9aa8ba7288
+           |    |    |    +-- 7ab6fe1d
+           |    |    |    |    +-- NULL
+           |    |    |    |    \-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- NULL
+           |    \-- d545c22ad982
+           |         +-- c9559ed50dde
+           |         |    +-- NULL
+           |         |    \-- NULL
+           |         \-- NULL
+           \-- NULL
+
+Deleted "f337379a":
+
+303e
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- 4a5ca452
+      |    +-- NULL
+      |    \-- NULL
+      \-- c6e7325fbd
+           +-- af8d1317
+           |    +-- 9aa8ba7288
+           |    |    +-- 7ab6fe1d
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- NULL
+           |    \-- NULL
+           \-- d545c22ad982
+                +-- c9559ed50dde
+                |    +-- NULL
+                |    \-- NULL
+                \-- NULL
+
+Deleted "303e":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- NULL
+      \-- c6e7325fbd
+           +-- af8d1317
+           |    +-- 9aa8ba7288
+           |    |    +-- 7ab6fe1d
+           |    |    |    +-- NULL
+           |    |    |    \-- NULL
+           |    |    \-- NULL
+           |    \-- NULL
+           \-- d545c22ad982
+                +-- c9559ed50dde
+                |    +-- NULL
+                |    \-- NULL
+                \-- NULL
+
+Deleted "9aa8ba7288":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- NULL
+      \-- c6e7325fbd
+           +-- af8d1317
+           |    +-- 7ab6fe1d
+           |    |    +-- NULL
+           |    |    \-- NULL
+           |    \-- NULL
+           \-- d545c22ad982
+                +-- c9559ed50dde
+                |    +-- NULL
+                |    \-- NULL
+                \-- NULL
+
+Deleted "c6e7325fbd":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- 601e26355dac
+      +-- NULL
+      \-- c9559ed50dde
+           +-- af8d1317
+           |    +-- 7ab6fe1d
+           |    |    +-- NULL
+           |    |    \-- NULL
+           |    \-- NULL
+           \-- d545c22ad982
+                +-- NULL
+                \-- NULL
+
+Deleted "601e26355dac":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- c9559ed50dde
+      +-- af8d1317
+      |    +-- 7ab6fe1d
+      |    |    +-- NULL
+      |    |    \-- NULL
+      |    \-- NULL
+      \-- d545c22ad982
+           +-- NULL
+           \-- NULL
+
+Deleted "7ab6fe1d":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- c9559ed50dde
+      +-- af8d1317
+      |    +-- NULL
+      |    \-- NULL
+      \-- d545c22ad982
+           +-- NULL
+           \-- NULL
+
+Deleted "d545c22ad982":
+
+4a5ca452
+ +-- 190b6bc1bc
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- 1990b9
+ |         +-- NULL
+ |         \-- NULL
+ \-- c9559ed50dde
+      +-- af8d1317
+      |    +-- NULL
+      |    \-- NULL
+      \-- NULL
+
+Deleted "190b6bc1bc":
+
+4a5ca452
+ +-- 1990b9
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- NULL
+ \-- c9559ed50dde
+      +-- af8d1317
+      |    +-- NULL
+      |    \-- NULL
+      \-- NULL
+
+Deleted "af8d1317":
+
+4a5ca452
+ +-- 1990b9
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- NULL
+ \-- c9559ed50dde
+      +-- NULL
+      \-- NULL
+
+Deleted "4a5ca452":
+
+c9559ed50dde
+ +-- 1990b9
+ |    +-- 0bb647
+ |    |    +-- NULL
+ |    |    \-- NULL
+ |    \-- NULL
+ \-- NULL
+
+Deleted "1990b9":
+
+c9559ed50dde
+ +-- 0bb647
+ |    +-- NULL
+ |    \-- NULL
+ \-- NULL
+
+Deleted "0bb647":
+
+c9559ed50dde
+ +-- NULL
+ \-- NULL
+
+Deleted "c9559ed50dde":
+
+(EMPTY)

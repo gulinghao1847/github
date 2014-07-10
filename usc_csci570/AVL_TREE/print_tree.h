@@ -1,0 +1,20 @@
+//
+//  print_tree.h
+//  570homework3
+//
+//  Created by linghao on 12-10-11.
+//  Copyright (c) 2012年 linghao. All rights reserved.
+//
+
+#ifndef _70homework3_print_tree_h
+#define _70homework3_print_tree_h
+#include "print_tree.h"
+#include "bst.h"
+#include "avl_tree.h"
+//void print_tree(My_tree_node*);
+void clean_char_array(char* array);
+void clean_input(char*);
+char* get_balance(avl_tree node);
+void print_avl_tree(avl_tree my_tree, int depth, char* old_is_right);
+void print_bst_tree(My_search_tree my_tree, int depth, char* old_is_right);
+#endif

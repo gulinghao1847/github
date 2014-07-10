@@ -1,0 +1,4 @@
+use "use make all" to compile all the files
+
+./quicksort_pthread "problem size"  "number of threads"
+./quicksort_MemoryOpt "problem size" "block size"

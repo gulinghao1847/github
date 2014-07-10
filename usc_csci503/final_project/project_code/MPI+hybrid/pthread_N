@@ -1,0 +1,33 @@
+total serial   time: 0.002913
+overhead       time: 0.000081
+total parallel time: 0.003238
+total serial   time: 0.006126
+overhead       time: 0.000086
+total parallel time: 0.011205
+total serial   time: 0.012173
+overhead       time: 0.000089
+total parallel time: 0.024539
+total serial   time: 0.028825
+overhead       time: 0.000103
+total parallel time: 0.048887
+total serial   time: 0.057335
+overhead       time: 0.000091
+total parallel time: 0.085563
+total serial   time: 0.100797
+overhead       time: 0.000105
+total parallel time: 0.142465
+total serial   time: 0.197949
+overhead       time: 0.000109
+total parallel time: 0.292029
+total serial   time: 0.407018
+overhead       time: 0.000119
+total parallel time: 0.601143
+total serial   time: 1.004366
+overhead       time: 0.000116
+total parallel time: 1.405712
+total serial   time: 3.318631
+overhead       time: 0.000144
+total parallel time: 4.736466
+total serial   time: 8.435895
+overhead       time: 0.000113
+total parallel time: 9.510136

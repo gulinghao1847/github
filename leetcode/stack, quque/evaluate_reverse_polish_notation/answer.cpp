@@ -11,57 +11,69 @@ Some examples:
 /*
 这题目基本思路就是建立一个stack， 然后如果遇到数字就push进去stack， 如果是运算符， 就pop出前两个数字， 然后进行运算， 并把结果push进入stack中， 如此循环， 直到结束，这里要注意在判定string是否是数字的时候， 要判断数字的sign
 当sign是＋ 和－的时候会和运算符冲突， 所以要避免这个东西*/
+
+//calculate number from a char string: 1.sign? 2.overflow? 3.char to int?
 class Solution {
 public:
-    bool isNum(string& a, int& num){
-        int i = 0;
-        int sign = 1;
-        if(a.size() > 1 && (a[0] == '-' || a[0] == '+')){
-            i++;
-            sign = a[0] == '-' ? -1 : 1;
+    int cal(int a, int b, char c){
+        int result = 0;
+        switch(c){
+            case '+':
+                    result = a + b;
+                    break;
+            case '-':
+                    result = a - b;
+                    break;
+            case '*':
+                    result = a * b;
+                    break;
+            case '/':
+                    result = a / b;
+                    break;
         }
-        for(; i < a.size();i++){
-            if(a[i] > '9' || a[i] < '0'){
-                return false;
-            }
-            num = num*10 + a[i] - '0';
-        }
-        num = num * sign;
-        return true;
+        return result;
     }
     
-    int doOperation(int a, int b, char& op){
-        int res = 0;
-        switch(op){
-            case '+':res = a + b;
-                break;
-            case '-':res = b - a;
-                break;
-            case '/':res = b/a;
-                break;
-            case '*':res = b*a;
-                break;
+    //since it is string, so we need to change it to number
+    bool getNum(string& a, int& num){
+        //sign
+        //neglect all space
+        int i = 0;
+        bool isPos = true;
+        bool isSign = true;
+        while(a[i] == ' ')i++;
+        if(a[i] == '+' || a[i] == '-') {
+            isPos = a[i] == '+' ? true : false;
+            i++;
         }
-        return res;
+        while(a[i] >= '0' && a[i] <= '9') {
+            num = num * 10 + a[i] - '0';
+            isSign = false;
+            i++;
+        }
+        //assume it is int
+        num = isPos ? num : -num;
+        return !isSign;
     }
-    //assumption: 1. all numbers are valid int
-    //            2. all operations are valid
+    
+    
     int evalRPN(vector<string> &tokens) {
-        stack<int> s;
+        stack<int> st;
+        //assumption: n
         for(int i = 0; i < tokens.size(); i++){
             int num = 0;
-            if(isNum(tokens[i], num)){
-                s.push(num);
+            if(getNum(tokens[i], num)){
+                st.push(num);
             }else{
-                int a = s.top();
-                s.pop();
-                int b = s.top();
-                s.pop();
-                int value = doOperation(a, b, tokens[i][0]);
-                s.push(value);
+                int a = st.top();
+                st.pop();
+                int b = st.top();
+                st.pop();
+                int c = cal(b, a, tokens[i][0]);
+                st.push(c);
             }
         }
-        return s.top();
+        return st.top();
     }
 };
 
